@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour with TERMINATOR | Durban Getaway</title>
+  <meta name="description" content="4 Days of Fun, Memories & Adventure in Durban. 11th - 14th December. R5,500 per person. Book now with Terminator!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-dark: #0a1f44;
+      --blue-mid: #0d3b66;
+      --blue-light: #1e5f8a;
+      --yellow: #ffd700;
+      --yellow-bright: #ffed4a;
+      --orange: #ff6b00;
+      --white: #ffffff;
+      --sand: #f8f1e3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #0a1f44 0%, #0d3b66 40%, #1a5276 100%);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Header / Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('poster.jpeg') center top / cover no-repeat;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .logo-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.4rem;
+      color: var(--yellow-bright);
+      margin-bottom: 0.3rem;
+    }
+
+    .main-title {
+      font-size: clamp(2.8rem, 8vw, 4.5rem);
+      font-weight: 800;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0 #000, 0 0 20px rgba(255, 215, 0, 0.4);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: #7dd3fc;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .dates-price {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #ffd700, #ffed4a);
+      color: #0a1f44;
+      font-weight: 800;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+      font-size: 1.1rem;
+    }
+
+    .price-badge {
+      font-size: 1.8rem;
+      padding: 1rem 2rem;
+    }
+
+    .price-badge small {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .days-badge {
+      background: #0a1f44;
+      border: 3px solid var(--yellow);
+      color: var(--yellow);
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+    }
+
+    .days-badge span:first-child {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .days-badge span:last-child {
+      font-size: 0.7rem;
+      text-align: center;
+      line-height: 1.2;
+      margin-top: 4px;
+    }
+
+    /* Package includes */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--yellow);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    .include-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-radius: 16px;
+      padding: 1.4rem 0.8rem;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .include-item:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 215, 0, 0.12);
+    }
+
+    .include-item .icon {
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .include-item h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--yellow-bright);
+    }
+
+    .include-item p {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-top: 0.3rem;
+    }
+
+    /* Activities */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .activity-card {
+      background: rgba(10, 31, 68, 0.7);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .activity-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .activity-card .info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .activity-card h3 {
+      color: var(--yellow);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .activity-card p {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 0.3rem;
+    }
+
+    /* Poster showcase */
+    .poster-section {
+      text-align: center;
+      padding: 1rem 1rem 2rem;
+    }
+
+    .poster-section img {
+      max-width: 100%;
+      width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--yellow);
+    }
+
+    /* Booking form */
+    .booking {
+      background: linear-gradient(135deg, #0a1f44, #0d3b66);
+      border: 3px solid var(--yellow);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .booking h2 {
+      text-align: center;
+      color: var(--yellow);
+      font-size: 1.7rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .booking .tagline {
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--yellow-bright);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid rgba(255, 215, 0, 0.35);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--yellow);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      padding: 1.1rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.55);
+    }
+
+    .btn-whatsapp:active {
+      transform: translateY(0);
+    }
+
+    .limited {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: #ff6b6b;
+      font-size: 0.95rem;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    /* Footer */
+    footer {
+      background: #061428;
+      padding: 2rem 1.2rem;
+      text-align: center;
+      border-top: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-info a {
+      color: var(--yellow-bright);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .address {
+      opacity: 0.85;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+      opacity: 0.75;
+    }
+
+    .tags span {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    .good-vibes {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.4rem;
+      color: #7dd3fc;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    /* Floating WhatsApp */
+    .float-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      z-index: 100;
+      transition: transform 0.2s;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1);
+    }
+
+    .float-wa svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="logo-text">Tour with</p>
+      <h1 class="main-title">TERMINATOR</h1>
+      <p class="subtitle">Durban Getaway</p>
+
+      <div class="dates-price">
+        <div class="badge">11ᵗʰ – 14ᵗʰ DECEMBER</div>
+        <div class="badge price-badge">
+          R5,500
+          <small>PER PERSON</small>
+        </div>
+        <div class="days-badge">
+          <span>4 DAYS</span>
+          <span>OF FUN<br>MEMORIES &amp;<br>ADVENTURE!</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Package Includes -->
+  <section class="section">
+    <h2 class="section-title">Package Includes</h2>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="icon">🚌</div>
+        <h3>Transport Return</h3>
+        <p>Comfortable bus</p>
+      </div>
+      <div class="include-item">
+        <div class="icon">🛏️</div>
+        <h3>Accommodation</h3>
+        <p>Comfortable stay</p>
+      </div>
+      <div class="include-item">
+        <div class="icon">☕</div>
+        <h3>Daily Breakfast</h3>
+        <p>Start the day right</p>
+      </div>
+      <div class="include-item">
+        <div class="icon">🎟️</div>
+        <h3>Activities</h3>
+        <p>All included</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section class="section">
+    <h2 class="section-title">Activities You Will Enjoy</h2>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <img src="activity_shaka.jpg" alt="uShaka Marine World - sharks and aquarium">
+        <div class="info">
+          <h3>uShaka Marine World</h3>
+          <p>Sharks, dolphins & ocean fun</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <img src="activity_boat.jpg" alt="Boating on the water">
+        <div class="info">
+          <h3>Boating</h3>
+          <p>Cruise the beautiful waters</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <img src="activity_sight.jpg" alt="Durban city sightseeing">
+        <div class="info">
+          <h3>Sight Seeing</h3>
+          <p>Explore Durban’s landmarks</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <img src="activity_beach.jpg" alt="Beach chairs and umbrellas">
+        <div class="info">
+          <h3>Beach Time</h3>
+          <p>Sun, sand & good vibes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Original Poster -->
+  <section class="poster-section">
+    <h2 class="section-title">Official Poster</h2>
+    <img src="poster.jpeg" alt="Tour with Terminator - Durban Getaway Poster">
+  </section>
+
+  <!-- Booking Form -->
+  <section class="section" id="book">
+    <div class="booking">
+      <h2>Book Your Spot Now!</h2>
+      <p class="tagline">Limited spaces available • 11–14 December</p>
+
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">WhatsApp / Phone *</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required>
+          </div>
+          <div class="form-group">
+            <label for="people">Number of People *</label>
+            <select id="people" name="people" required>
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6+ People</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Special Requests / Notes</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Any dietary needs, room preferences, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn-whatsapp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Send Booking via WhatsApp
+        </button>
+      </form>
+
+      <p class="limited">⚡ Limited Spaces — Book Now!</p>
+    </div>
+  </section>
+
+  <!-- Good vibes -->
+  <div style="text-align:center;padding:0 1rem 2rem;">
+    <p class="good-vibes">Good Vibes. Great People. Unforgettable Memories!</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="contact-info">
+      <a href="https://wa.me/27671548722" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        067 154 8722
+      </a>
+      <a href="mailto:tebogotshepo75@gmail.com">
+        ✉️ tebogotshepo75@gmail.com
+      </a>
+    </div>
+    <p class="address">📍 9351 Khutsong Street, Boksburg, Gauteng, 1459</p>
+    <div class="tags">
+      <span>✓ Vacations</span>
+      <span>✓ Honeymoons</span>
+      <span>✓ Family Trips</span>
+      <span>✓ Business Travel</span>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">© 2026 Tour with Terminator • All rights reserved</p>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/27671548722" class="float-wa" target="_blank" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const people = document.getElementById('people').value;
+      const email = document.getElementById('email').value.trim();
+      const notes = document.getElementById('notes').value.trim();
+
+      // Build WhatsApp message
+      let message = `🌴 *TOUR WITH TERMINATOR - DURBAN GETAWAY BOOKING*\n\n`;
+      message += `📅 *Dates:* 11th – 14th December\n`;
+      message += `💰 *Price:* R5,500 per person\n\n`;
+      message += `👤 *Name:* ${name}\n`;
+      message += `📱 *Phone:* ${phone}\n`;
+      message += `👥 *Number of People:* ${people}\n`;
+      if (email) message += `📧 *Email:* ${email}\n`;
+      if (notes) message += `\n📝 *Notes:* ${notes}\n`;
+      message += `\n---\nPlease confirm availability and payment details. Thank you!`;
+
+      const encoded = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/27671548722?text=${encoded}`;
+
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
